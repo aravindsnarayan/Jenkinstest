@@ -11,7 +11,7 @@ pipeline {
 	
 		stage('Build') {
 			steps {
-				echo "Building the checked-out project!";
+				echo "Building the checked-out project! $date";
 				sh 'date';
 				sh 'sh Build.sh'
 			}
