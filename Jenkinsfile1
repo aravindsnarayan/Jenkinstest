@@ -20,6 +20,7 @@ pipeline {
                     }
                     steps {
                         echo "Task1 on Agent Linux_Node"
+			sh 'date'
                     }
                     
                 }
@@ -29,6 +30,7 @@ pipeline {
                     }
                     steps {
 						echo "Task1 on Master Server"
+						sh 'date'
 					}
                 }
             }
