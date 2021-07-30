@@ -4,6 +4,7 @@ pipeline {
 		stage('Git-Checkout') {
 			steps {
 				echo "Checking out from Github Repo";
+				sh 'date';
 				git branch: 'main', url: 'https://github.com/aravindsnarayan/Jenkinstest.git'
 			}
 		}
@@ -11,6 +12,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo "Building the checked-out project!";
+				sh 'date';
 				sh 'sh Build.sh'
 			}
 		}
@@ -18,6 +20,7 @@ pipeline {
 		stage('Unit-Test') {
 			steps {
 				echo "Running Unit Tests";
+				sh 'date';
 				sh 'sh Unit.sh'
 			}
 		}
@@ -25,6 +28,7 @@ pipeline {
 		stage('Quality Check') {
 			steps {
 				echo "Verifying Quality Gate";
+				sh 'date';
 				sh 'sh Quality.sh'
 			
 			}
@@ -33,6 +37,7 @@ pipeline {
 		stage('Deploy') {
 			steps {
 				echo "Deploying to Stage Environment";
+				sh 'date';
 				sh 'sh Deploy.sh'
 			
 			}
