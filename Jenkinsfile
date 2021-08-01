@@ -1,52 +1,23 @@
 pipeline {
 	agent any
-	ws("/var/lib/tomcat7/webapps") {
-  	echo "awesome commands here instead of echo"
-	}
+	
 	stages {
-		stage('Git-Checkout') {
-			steps {
-				echo "Checking out from Github Repo";
-				
-				sh 'date';
-				git branch: 'main', url: 'https://github.com/aravindsnarayan/Jenkinstest.git'
-			}
-		}
+		
+		
 	
 		stage('Build') {
 			steps {
+				ws('/var/lib/tomcat7/webapps') { echo "Worspace changed "}
 				echo "Building the checked-out project!";
 				sh 'date';
 				sh 'sh Build.sh'
 			}
-		}
-	
-		stage('Unit-Test') {
-			steps {
-				echo "Running Unit Tests";
-				sh 'date';
-				sh 'sh Unit.sh'
-			}
-		}
-	
-		stage('Quality Check') {
-			steps {
-				echo "Verifying Quality Gate";
-				sh 'date';
-				sh 'sh Quality.sh'
+		
 			
 			}
-		}
-	
-		stage('Deploy') {
-			steps {
-				echo "Deploying to Stage Environment";
-				sh 'date';
-				sh 'sh Deploy.sh'
-			
-			}
-		}
+		
 	}
+}
 	
 	post {
 		always {
