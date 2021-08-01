@@ -9,8 +9,9 @@ pipeline {
 			steps {
 				echo "Building the checked-out project!";
 				sh 'date';
-				ws('/var/lib/tomcat7/webapps')
+				ws('/var/lib/tomcat7/webapps'){}
 				sh 'sh Build.sh'
+				
 			}
 		
 			
