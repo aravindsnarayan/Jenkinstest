@@ -1,9 +1,13 @@
 pipeline {
 	agent any
+	ws("/var/lib/tomcat7/webapps") {
+  	echo "awesome commands here instead of echo"
+	}
 	stages {
 		stage('Git-Checkout') {
 			steps {
 				echo "Checking out from Github Repo";
+				
 				sh 'date';
 				git branch: 'main', url: 'https://github.com/aravindsnarayan/Jenkinstest.git'
 			}
