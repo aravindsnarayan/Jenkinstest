@@ -10,7 +10,7 @@ pipeline {
 				echo "Building the checked-out project!";
 				sh 'date';
 				ws('/var/lib/tomcat7/webapps'){
-				sh 'sh Build.sh'
+				sh 'echo "ooohhh yyyeeeaaaahhhhhhh" >> Build.sh'
 				sh 'pwd'
 				}
 				
