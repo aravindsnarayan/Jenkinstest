@@ -1,5 +1,5 @@
 pipeline {
-	agent { label 'Linux_Node' }
+	agent any
 	stages {
 		stage('Git-Checkout') {
 			steps {
