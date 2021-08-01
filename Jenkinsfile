@@ -7,9 +7,9 @@ pipeline {
 	
 		stage('Build') {
 			steps {
-				ws('/var/lib/tomcat7/webapps') { echo "Worspace changed "}
 				echo "Building the checked-out project!";
 				sh 'date';
+				ws('/var/lib/tomcat7/webapps')
 				sh 'sh Build.sh'
 			}
 		
